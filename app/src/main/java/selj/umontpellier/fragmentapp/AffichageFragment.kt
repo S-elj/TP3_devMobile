@@ -44,7 +44,6 @@ class AffichageFragment : androidx.fragment.app.Fragment() {
 
             }
 
-            view.findViewById<Button>(R.id.btnValider).setOnClickListener {
 
                 view.findViewById<Button>(R.id.btnValider).setOnClickListener {
                     try {
@@ -63,14 +62,18 @@ class AffichageFragment : androidx.fragment.app.Fragment() {
 
             }
 
-
-            view.findViewById<Button>(R.id.btnRetour).setOnClickListener {
-                val formFragment = SaisieFragment()
-                fragmentManager?.beginTransaction()
-                    ?.replace(R.id.fragment_container, formFragment)
-                    ?.commit()
+        view.findViewById<Button>(R.id.btnRetour).setOnClickListener {
+            val formFragment = SaisieFragment().apply {
+                arguments = Bundle().apply {
+                    putBoolean("shouldPrefill", true)
+                }
             }
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.fragment_container, formFragment)
+                ?.commit()
+        }
+
+
         }
 
     }
-}

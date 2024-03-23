@@ -8,6 +8,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import org.json.JSONException
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
 
 class SaisieFragment : androidx.fragment.app.Fragment() {
 
@@ -21,6 +26,13 @@ class SaisieFragment : androidx.fragment.app.Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        val shouldPrefill = arguments?.getBoolean("shouldPrefill", false) ?: false
+        if (shouldPrefill) {
+            prefillData()
+        }
+
 
         view.findViewById<Button>(R.id.btn_soumettre).setOnClickListener {
             val editTexts = mutableListOf(
@@ -71,6 +83,32 @@ class SaisieFragment : androidx.fragment.app.Fragment() {
                         ?.commit()
                 }
             }
+        }
+    }
+    private fun prefillData() {
+        try {
+            val filename = "userData.json"
+            val fileInput = context?.openFileInput(filename)
+            val inputStreamReader = InputStreamReader(fileInput)
+            val stringBuilder = StringBuilder()
+            val bufferedReader = BufferedReader(inputStreamReader)
+            var text: String? = null
+            while ({ text = bufferedReader.readLine(); text }() != null) {
+                stringBuilder.append(text)
+            }
+            val jsonData = JSONObject(stringBuilder.toString())
+            val nom = jsonData.getString("nom")
+            val prenom = jsonData.getString("prenom")
+            val tel = jsonData.getString("tel")
+
+            view?.findViewById<EditText>(R.id.nom)?.setText(nom)
+            view?.findViewById<EditText>(R.id.prenom)?.setText(prenom)
+            view?.findViewById<EditText>(R.id.tel)?.setText(tel)
+
+        } catch (e: IOException) {
+            // Gestion des erreurs
+        } catch (e: JSONException) {
+            // Gestion des erreurs JSON
         }
     }
 }
