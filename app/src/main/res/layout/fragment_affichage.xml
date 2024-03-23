@@ -1,0 +1,55 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <TextView
+            android:id="@+id/tvNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nom" />
+
+    <TextView
+            android:id="@+id/tvPrenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prénom" />
+
+    <TextView
+            android:id="@+id/tvBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date de naissance" />
+
+    <TextView
+            android:id="@+id/tvTel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Numéro de téléphone" />
+
+    <TextView
+            android:id="@+id/tvMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adresse mail" />
+
+    <TextView
+            android:id="@+id/tvCentreInteret"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Centres d'intérêt" />
+
+    <Button
+            android:id="@+id/btnValider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valider" />
+
+    <Button
+            android:id="@+id/btnRetour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retour" />
+</LinearLayout>

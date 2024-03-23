@@ -1,0 +1,79 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <EditText
+            android:id="@+id/nom"
+            android:tag="nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom" />
+
+    <EditText
+            android:id="@+id/prenom"
+            android:tag="prenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prénom" />
+
+    <EditText
+            android:id="@+id/birth"
+            android:tag="birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date de naissance"
+            android:inputType="date" />
+
+    <EditText
+            android:id="@+id/tel"
+            android:tag="tel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numéro de téléphone"
+            android:inputType="phone" />
+
+    <EditText
+            android:id="@+id/mail"
+            android:tag="mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Adresse mail"
+            android:inputType="textEmailAddress" />
+
+    <CheckBox
+            android:id="@+id/centre_interet_sport"
+            android:tag="centre_interet_sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sport" />
+
+    <CheckBox
+            android:id="@+id/centre_interet_musique"
+            android:tag=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Musique" />
+
+    <CheckBox
+            android:id="@+id/centre_interet_lecture"
+            android:tag="centre_interet_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lecture" />
+
+    <Switch
+            android:id="@+id/switch_synchronisation"
+            android:tag="switch_synchronisation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Synchroniser les données" />
+
+    <Button
+            android:id="@+id/btn_soumettre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Soumettre" />
+</LinearLayout>
