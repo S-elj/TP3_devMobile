@@ -10,14 +10,14 @@
             android:tag="nom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nom" />
+            android:hint="Nom"/>
 
     <EditText
             android:id="@+id/prenom"
             android:tag="prenom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Prénom" />
+            android:hint="Prénom"/>
 
     <EditText
             android:id="@+id/birth"
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Date de naissance"
-            android:inputType="date" />
+            android:inputType="date"/>
 
     <EditText
             android:id="@+id/tel"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Numéro de téléphone"
-            android:inputType="phone" />
+            android:inputType="phone"/>
 
     <EditText
             android:id="@+id/mail"
@@ -41,39 +41,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Adresse mail"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"/>
 
     <CheckBox
             android:id="@+id/centre_interet_sport"
             android:tag="centre_interet_sport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sport" />
+            android:text="Sport"/>
 
     <CheckBox
             android:id="@+id/centre_interet_musique"
             android:tag=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Musique" />
+            android:text="Musique"/>
 
     <CheckBox
             android:id="@+id/centre_interet_lecture"
             android:tag="centre_interet_lecture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lecture" />
+            android:text="Lecture"/>
 
     <Switch
             android:id="@+id/switch_synchronisation"
             android:tag="switch_synchronisation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Synchroniser les données" />
+            android:text="Synchroniser les données"/>
 
     <Button
-            android:id="@+id/btn_soumettre"
+            android:id="@+id/btn_import"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Importer"/>
+    <Button
+            android:id="@+id/btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Soumettre" />
+            android:text="Soumettre"/>
 </LinearLayout>

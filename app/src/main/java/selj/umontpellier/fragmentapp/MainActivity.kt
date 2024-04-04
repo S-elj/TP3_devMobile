@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             // Créer une instance de SaisieFragment
-            val fragment = SaisieFragment()
+            val fragment = InputFragment()
 
             // Ajouter le fragment au 'fragment_container'
             supportFragmentManager.beginTransaction()
