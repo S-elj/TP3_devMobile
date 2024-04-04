@@ -49,18 +49,17 @@ class InputFragment : Fragment() {
 
     override fun onViewCreated(view: View, bundle: Bundle?) {
 
-        // Enregistrement du BroadcastReceiver pour écouter les diffusions du service
-        val intentFilter = IntentFilter().apply {
-            addAction(FileService.ACTION_DATA_FETCH_SUCCESS)
-            addAction(FileService.ACTION_DATA_FETCH_ERROR)
-        }
-        requireActivity().registerReceiver(dataFetchReceiver, intentFilter)
 
         // Sauvegarde
         view.findViewById<Button>(R.id.btn_import).setOnClickListener {
             val intent = Intent(context, FileService::class.java)
-            startActivity(intent)
-
+            context?.startService(intent)
+            // Enregistrement du BroadcastReceiver pour écouter les diffusions du service
+            val intentFilter = IntentFilter().apply {
+                addAction(FileService.ACTION_DATA_FETCH_SUCCESS)
+                addAction(FileService.ACTION_DATA_FETCH_ERROR)
+            }
+            requireActivity().registerReceiver(dataFetchReceiver, intentFilter, Context.RECEIVER_EXPORTED)
         }
         view.findViewById<Button>(R.id.btn_submit).setOnClickListener {
             val centresInteret = mutableListOf<String>()
